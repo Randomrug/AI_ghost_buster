@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Ghost Buddy 👻",
+  "version": "3.3",
+  "description": "Your interactive ghost companion with study, relax and play modes",
+  "icons": {
+    "16": "ghost.png",
+    "32": "ghost.png",
+    "48": "ghost.png",
+    "128": "ghost.png"
+  },
+  "permissions": [
+    "storage",
+    "tts"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "https://openrouter.ai/*"
+  ],
+  "web_accessible_resources": [{
+    "resources": [
+      "musics/study.mp3",
+      "musics/relax.mp3",
+      "musics/play.mp3",
+      "ghost.png"
+    ],
+    "matches": ["<all_urls>"]
+  }],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["ghost.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "ghost.png",
+      "32": "ghost.png",
+      "48": "ghost.png"
+    },
+    "default_title": "Ghost Buddy 👻",
+    "default_popup": "popup.html"
+  }
+}
