@@ -92,7 +92,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         const aiResponse = await fetch("https://openrouter.ai/api/v1/chat/completions", {
           method: "POST",
           headers: {
-            "Authorization": "Bearer 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",
+            "Authorization": "Bearer (enter ur api key here)",
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
